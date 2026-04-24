@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!-- Gross–Net: Figma màn công cụ https://www.figma.com/design/ILHcxEuPmbw9AiIZs6DpKd/Viecoi?node-id=39968-68628 — form đồng bộ trang TNCN (39944-550979) -->
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công cụ tính lương Gross – Net chuẩn 2026 | VIECOI.vn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css?v=21">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-logo" aria-label="VIECOI.vn">
+        <span class="site-logo__vie">VIE</span><span class="site-logo__coi">COI</span><span class="site-logo__vn">.vn</span>
+      </a>
+      <nav class="site-nav" aria-label="Menu chính">
+        <a href="#" class="site-nav__link">Tìm việc <i class="bi bi-chevron-down site-nav__chev" aria-hidden="true"></i></a>
+        <a href="#" class="site-nav__link">Công ty <i class="bi bi-chevron-down site-nav__chev" aria-hidden="true"></i></a>
+        <a href="#" class="site-nav__link">Cẩm nang <i class="bi bi-chevron-down site-nav__chev" aria-hidden="true"></i></a>
+        <div class="site-nav__item site-nav__item--dropdown">
+          <button type="button" class="site-nav__trigger" id="site-nav-tools-trigger" aria-expanded="false" aria-haspopup="menu" aria-controls="site-nav-tools-menu">
+            Công cụ
+            <i class="bi bi-chevron-down site-nav__chev site-nav__chev--trigger" aria-hidden="true"></i>
+          </button>
+          <div class="site-nav__dropdown" id="site-nav-tools-menu" role="menu" hidden aria-hidden="true">
+            <a href="index.html" class="site-nav__droplink" role="menuitem">Tính thuế thu nhập cá nhân</a>
+            <a href="gross-net.html" class="site-nav__droplink site-nav__droplink--current" role="menuitem">Tính lương Gross&nbsp;–&nbsp;Net</a>
+            <a href="bhtn.html" class="site-nav__droplink" role="menuitem">Tính bảo hiểm thất nghiệp</a>
+          </div>
+        </div>
+      </nav>
+      <div class="site-header__actions">
+        <button type="button" class="lang-select" aria-label="Ngôn ngữ">
+          <span class="lang-select__flag" aria-hidden="true">🇻🇳</span>
+          <i class="bi bi-chevron-down lang-select__chev" aria-hidden="true"></i>
+        </button>
+        <a href="#" class="btn btn-header btn-header--login">Đăng nhập</a>
+        <a href="#" class="site-header__register">Đăng ký</a>
+        <button type="button" class="btn btn-header btn-header--employer">
+          Nhà tuyển dụng <i class="bi bi-chevron-down" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="index.html" class="breadcrumb-nav__home" aria-label="Trang chủ"><i class="bi bi-house-fill" aria-hidden="true"></i></a>
+        <span class="breadcrumb-nav__sep">/</span>
+        <a href="#">Việc làm</a>
+        <span class="breadcrumb-nav__sep">/</span>
+        <a href="#">Công cụ</a>
+        <span class="breadcrumb-nav__sep">/</span>
+        <span class="breadcrumb-nav__current">Tính lương Gross – Net</span>
+      </nav>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <div class="container container--layout">
+      <div class="layout-row">
+        <div class="layout-row__main">
+          <article class="tool-card">
+            <div class="tncn-banner gn-banner">
+              <div class="tncn-banner__text">
+                <h1 class="tncn-banner__title"><span class="tncn-banner__line">Công cụ tính lương Gross – Net chuẩn 2026</span></h1>
+              </div>
+              <div class="tncn-banner__art" aria-hidden="true">
+                <img class="tncn-banner__img" src="assets/banner-tncn-art.svg" width="114" height="90" alt="">
+              </div>
+            </div>
+
+            <div class="tool-card__body">
+              <div class="tncn-intro">
+                <p class="tncn-intro__lead">
+                  <span class="tncn-intro__lead-strong">Áp dụng quy định: </span><span class="tncn-intro__lead-body">Từ ngày 01/01/2026 </span><span class="tncn-intro__lead-accent">(Mới nhất)</span>
+                </p>
+                <p class="tncn-intro__body">Căn cứ&nbsp;<strong>Luật Thuế thu nhập cá nhân số 109/2025/QH15, biểu thuế mới</strong>&nbsp;giảm từ 7 xuống 5 bậc có hiệu lực thi hành từ ngày 01 tháng 07 năm 2026. Tuy nhiên, luật chỉ rõ &quot;Các quy định liên quan đến thu nhập từ kinh doanh, từ tiền lương, tiền công của cá nhân cư trú áp dụng từ kỳ tính thuế năm 2026.&quot;, nghĩa là phương pháp tính 5 bậc thuế sẽ&nbsp;<strong>áp dụng với thu nhập từ kinh doanh, từ tiền lương, tiền công của cá nhân cư trú từ 1/1/2026.</strong></p>
+              </div>
+
+              <div class="deduction-summary deduction-summary--gn">
+                <div class="deduction-summary__col">
+                  <p class="deduction-summary__label">Lương cơ sở</p>
+                  <p class="deduction-summary__value">2.340.000 VND</p>
+                </div>
+                <div class="deduction-summary__rule" aria-hidden="true"></div>
+                <div class="deduction-summary__col">
+                  <p class="deduction-summary__label">Giảm trừ gia cảnh bản thân</p>
+                  <p class="deduction-summary__value">15.500.000 VND</p>
+                </div>
+                <div class="deduction-summary__rule" aria-hidden="true"></div>
+                <div class="deduction-summary__col">
+                  <p class="deduction-summary__label">Người phụ thuộc</p>
+                  <p class="deduction-summary__value">6.200.000 VND</p>
+                </div>
+              </div>
+
+              <form class="tncn-form" id="gn-form" action="#" method="post" novalidate>
+                <div class="form-row-tncn">
+                  <div class="form-row-tncn__gross field-tncn">
+                    <label class="field-label" for="gn-amount">
+                      <span id="gn-amount-label">Lương Gross</span>
+                      <span id="gn-gross-hint-wrap" class="gn-gross-hint-wrap">
+                        <button type="button" class="field-label__hint" data-tncn-tooltip="gross" aria-controls="tncn-gross-sheet" aria-expanded="false" aria-label="Giải thích Lương Gross"><i class="bi bi-question-circle field-label__icon" aria-hidden="true"></i></button>
+                      </span>
+                      <span id="gn-net-hint-wrap" class="gn-gross-hint-wrap" hidden>
+                        <button type="button" class="field-label__hint" data-tncn-tooltip="net" aria-controls="tncn-net-sheet" aria-expanded="false" aria-label="Giải thích Lương Net"><i class="bi bi-question-circle field-label__icon" aria-hidden="true"></i></button>
+                      </span>
+                    </label>
+                    <div class="gross-ac" id="gn-gross-ac">
+                      <div class="field-tncn__shell" id="gn-amount-field-shell">
+                        <div class="input-figma input-figma--money" id="gn-amount-wrap">
+                          <input type="text" class="input-figma__control" id="gn-amount" name="gn_amount" placeholder="Nhập số tiền (VD: 15.000.000)" autocomplete="off" inputmode="numeric" aria-invalid="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="gn-gross-ac-listbox">
+                          <button type="button" class="input-figma__clear input-figma__clear--close-circle" id="gn-amount-clear" hidden aria-label="Xóa nội dung"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"><g clip-path="url(#clip-gn-amount-close)"><path d="M7.00195 0.878052C10.3844 0.878052 13.127 3.62063 13.127 7.00305C13.1269 10.3855 10.3844 13.1281 7.00195 13.1281C3.61955 13.128 0.876959 10.3855 0.876953 7.00305C0.876953 3.62064 3.61955 0.878069 7.00195 0.878052ZM4.74023 4.73059C4.68033 4.73082 4.63096 4.78003 4.63086 4.83997C4.63115 4.86593 4.64071 4.89122 4.65723 4.91125L6.43555 7.02942L4.65723 9.14856C4.64103 9.16892 4.63095 9.19314 4.63086 9.21887C4.63086 9.28025 4.68027 9.32802 4.74023 9.32825L5.64453 9.32434L7.00195 7.70618L8.36133 9.32629L9.26367 9.3302C9.3236 9.33001 9.37293 9.28077 9.37305 9.22083C9.37305 9.19485 9.36309 9.17004 9.34668 9.14954L7.56934 7.0304L9.3457 4.91223C9.36183 4.89191 9.371 4.86758 9.37109 4.84192C9.37109 4.7804 9.32188 4.73254 9.26172 4.73254L8.35938 4.73645L7.00195 6.35461L5.64453 4.7345L4.74023 4.73059Z" fill="black" fill-opacity="0.25"/></g><defs><clipPath id="clip-gn-amount-close"><rect width="14" height="14" fill="white"/></clipPath></defs></svg></button>
+                          <span class="input-figma__suffix input-figma__suffix--currency">VND</span>
+                        </div>
+                      </div>
+                      <div class="gross-ac__panel" id="gn-gross-ac-panel" hidden>
+                        <ul class="gross-ac__list" id="gn-gross-ac-listbox" role="listbox" aria-label="Gợi ý lương">
+                          <li id="gn-gross-ac-custom" class="gross-ac__item gross-ac__item--custom" role="option" tabindex="-1" hidden data-amount=""></li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="8000000">8.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="10000000">10.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="12000000">12.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="15000000">15.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="20000000">20.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="25000000">25.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="30000000">30.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="40000000">40.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="50000000">50.000.000</li>
+                          <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="80000000">80.000.000</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <p class="field-tncn__error" id="gn-amount-error" role="alert" hidden>Vui lòng nhập số tiền hợp lệ</p>
+                  </div>
+                  <div class="form-row-tncn__deps">
+                    <label class="field-label" for="gn-dependents">Người phụ thuộc <button type="button" class="field-label__hint" data-tncn-popover="dependents" aria-controls="tncn-deps-sheet" aria-label="Giải thích người phụ thuộc" aria-expanded="false"><i class="bi bi-question-circle field-label__icon" aria-hidden="true"></i></button></label>
+                    <div class="deps-field">
+                      <div class="input-figma input-figma--narrow">
+                        <input type="text" class="input-figma__control" id="gn-dependents" name="gn_dependents" value="0" inputmode="numeric" autocomplete="off">
+                      </div>
+                      <div class="stepper">
+                        <button type="button" class="stepper__btn stepper__btn--minus" id="gn-dep-minus" aria-label="Giảm"><i class="bi bi-dash-lg" aria-hidden="true"></i></button>
+                        <button type="button" class="stepper__btn stepper__btn--plus" id="gn-dep-plus" aria-label="Tăng"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field-block">
+                  <p class="field-label field-label--block">Mức lương đóng bảo hiểm</p>
+                  <div class="insurance-row">
+                    <label class="radio-card radio-card--active">
+                      <input type="radio" name="gn_insurance_salary" value="full" class="radio-card__input" checked>
+                      <span class="radio-card__dot" aria-hidden="true"></span>
+                      <span class="radio-card__text">Mức lương đầy đủ</span>
+                    </label>
+                    <div class="radio-card radio-card--other" id="gn-insurance-other-card">
+                      <div class="radio-card__khac-head">
+                        <label class="radio-card__left">
+                          <input type="radio" name="gn_insurance_salary" value="other" class="radio-card__input">
+                          <span class="radio-card__dot radio-card__dot--idle" aria-hidden="true"></span>
+                          <span class="radio-card__text">Khác</span>
+                        </label>
+                        <button type="button" class="field-label__hint radio-card__hint" data-tncn-popover="insuranceOther" aria-controls="tncn-insurance-sheet" aria-label="Giải thích mức đóng bảo hiểm khác" aria-expanded="false"><i class="bi bi-question-circle field-label__icon" aria-hidden="true"></i></button>
+                      </div>
+                      <div class="radio-card__other-body field-tncn">
+                        <div class="gross-ac" id="gn-insurance-ac">
+                          <div class="field-tncn__shell" id="gn-insurance-other-shell">
+                            <div class="input-figma input-figma--money input-figma--muted input-figma--grow" id="gn-insurance-other-wrap">
+                              <input type="text" class="input-figma__control" id="gn-insurance_other" name="gn_insurance_other" placeholder="Nhập mức đóng bảo hiểm" value="" readonly inputmode="numeric" autocomplete="off" aria-invalid="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="gn-insurance-ac-listbox">
+                              <button type="button" class="input-figma__clear input-figma__clear--close-circle" id="gn-insurance_other-clear" hidden aria-label="Xóa nội dung"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false"><g clip-path="url(#clip-gn-insurance-close)"><path d="M7.00195 0.878052C10.3844 0.878052 13.127 3.62063 13.127 7.00305C13.1269 10.3855 10.3844 13.1281 7.00195 13.1281C3.61955 13.128 0.876959 10.3855 0.876953 7.00305C0.876953 3.62064 3.61955 0.878069 7.00195 0.878052ZM4.74023 4.73059C4.68033 4.73082 4.63096 4.78003 4.63086 4.83997C4.63115 4.86593 4.64071 4.89122 4.65723 4.91125L6.43555 7.02942L4.65723 9.14856C4.64103 9.16892 4.63095 9.19314 4.63086 9.21887C4.63086 9.28025 4.68027 9.32802 4.74023 9.32825L5.64453 9.32434L7.00195 7.70618L8.36133 9.32629L9.26367 9.3302C9.3236 9.33001 9.37293 9.28077 9.37305 9.22083C9.37305 9.19485 9.36309 9.17004 9.34668 9.14954L7.56934 7.0304L9.3457 4.91223C9.36183 4.89191 9.371 4.86758 9.37109 4.84192C9.37109 4.7804 9.32188 4.73254 9.26172 4.73254L8.35938 4.73645L7.00195 6.35461L5.64453 4.7345L4.74023 4.73059Z" fill="black" fill-opacity="0.25"/></g><defs><clipPath id="clip-gn-insurance-close"><rect width="14" height="14" fill="white"/></clipPath></defs></svg></button>
+                              <span class="input-figma__suffix input-figma__suffix--insurance input-figma__suffix--currency">VND</span>
+                            </div>
+                          </div>
+                          <div class="gross-ac__panel" id="gn-insurance-ac-panel" hidden>
+                            <ul class="gross-ac__list" id="gn-insurance-ac-listbox" role="listbox" aria-label="Gợi ý mức đóng bảo hiểm">
+                              <li id="gn-insurance-ac-custom" class="gross-ac__item gross-ac__item--custom" role="option" tabindex="-1" hidden data-amount=""></li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="8000000">8.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="10000000">10.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="12000000">12.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="15000000">15.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="20000000">20.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="25000000">25.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="30000000">30.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="40000000">40.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="50000000">50.000.000</li>
+                              <li class="gross-ac__item gross-ac__preset" role="option" tabindex="-1" data-amount="80000000">80.000.000</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="field-tncn__error" id="gn-insurance-other-error" role="alert" hidden>Vui lòng nhập mức đóng bảo hiểm</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field-block">
+                  <p class="field-label field-label--block">
+                    Vùng
+                    <button type="button" class="field-label__hint field-label__hint--region-modal" aria-controls="tncn-region-sheet" aria-expanded="false" aria-haspopup="dialog" aria-label="Giải thích mức lương theo vùng"><i class="bi bi-question-circle field-label__icon" aria-hidden="true"></i></button>
+                  </p>
+                  <div class="region-radios" role="radiogroup" aria-label="Vùng lương tối thiểu">
+                    <label class="region-item">
+                      <input type="radio" name="gn_region" value="I" class="region-item__input" checked>
+                      <span class="region-item__dot" aria-hidden="true"></span>
+                      <span>Vùng I</span>
+                    </label>
+                    <label class="region-item">
+                      <input type="radio" name="gn_region" value="II" class="region-item__input">
+                      <span class="region-item__dot" aria-hidden="true"></span>
+                      <span>Vùng II</span>
+                    </label>
+                    <label class="region-item">
+                      <input type="radio" name="gn_region" value="III" class="region-item__input">
+                      <span class="region-item__dot" aria-hidden="true"></span>
+                      <span>Vùng III</span>
+                    </label>
+                    <label class="region-item">
+                      <input type="radio" name="gn_region" value="IV" class="region-item__input">
+                      <span class="region-item__dot" aria-hidden="true"></span>
+                      <span>Vùng IV</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="tncn-alert" id="gn-form-error" role="alert" hidden></div>
+                <div class="gn-calc-actions" role="group" aria-label="Chọn hướng tính lương">
+                  <button type="button" class="btn gn-calc-actions__btn gn-calc-actions__btn--idle" id="gn-calc-g2n" data-gn-calc="g2n">Gross → Net</button>
+                  <button type="button" class="btn gn-calc-actions__btn gn-calc-actions__btn--idle" id="gn-calc-n2g" data-gn-calc="n2g">Net → Gross</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="tool-card__lower" id="gn-results-pane" hidden>
+              <div class="tncn-results-stack">
+                <section class="tncn-result-hero tncn-result-hero--gn" aria-labelledby="gn-result-hero-title">
+                  <div class="tncn-result-hero__head tncn-result-hero__head--gn">
+                    <h2 id="gn-result-hero-title" class="tncn-result-hero__title tncn-result-hero__title--gn">Kết quả tính lương</h2>
+                  </div>
+                  <div class="tncn-result-hero__card tncn-result-hero__card--gn">
+                    <div id="gn-hero-compare" class="tncn-result-hero__compare tncn-result-hero__compare--gn" role="group" aria-label="Kết quả Gross và Net">
+                      <div class="tncn-result-hero__compare-col tncn-result-hero__compare-col--gn">
+                        <p class="tncn-result-hero__compare-label tncn-result-hero__compare-label--gn">GROSS</p>
+                        <p class="tncn-result-hero__compare-value tncn-result-hero__compare-value--gn"><strong id="gn-hero-gross">—</strong></p>
+                      </div>
+                      <span class="tncn-result-hero__compare-arrow tncn-result-hero__compare-arrow--gn" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                      <div class="tncn-result-hero__compare-col tncn-result-hero__compare-col--gn">
+                        <p class="tncn-result-hero__compare-label tncn-result-hero__compare-label--gn">NET</p>
+                        <p class="tncn-result-hero__compare-value tncn-result-hero__compare-value--gn"><strong id="gn-hero-net">—</strong></p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="table-section tncn-table-section--figma" aria-labelledby="gn-explain-title">
+                  <h2 id="gn-explain-title" class="table-section__heading">Diễn giải chi tiết (VND)</h2>
+                  <div id="gn-detail-grid" class="gn-detail-grid gn-detail-grid--g2n" role="table" aria-label="Diễn giải lương Gross và Net">
+                    <div class="gn-detail-grid__row gn-detail-grid__row--head" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell"><span id="gn-detail-label-main-income">Lương Gross</span></div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-gross">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Bảo hiểm xã hội (8%)</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-bhxh">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Bảo hiểm y tế (1.5%)</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-bhyt">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Bảo hiểm thất nghiệp (1%)</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-bhtn">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row gn-detail-grid__row--soft" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Thu nhập trước thuế</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-pretax">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Giảm trừ gia cảnh bản thân</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-deduct-self">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Giảm trừ gia cảnh người phụ thuộc</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-deduct-dep">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row gn-detail-grid__row--soft" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Thu nhập chịu thuế</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-taxable">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label" role="cell">Thuế thu nhập cá nhân(*)</div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value" role="cell"><span id="gn-val-tax">—</span></div>
+                    </div>
+                    <div class="gn-detail-grid__row gn-detail-grid__row--foot" role="row">
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--label gn-detail-grid__cell--foot-label" role="cell">
+                        <span class="gn-detail-grid__foot-strong">Lương NET</span><br aria-hidden="true" />
+                        <span class="gn-detail-grid__foot-sub">(Thu nhập trước thuế - Thuế thu nhập cá nhân.)</span>
+                      </div>
+                      <div class="gn-detail-grid__cell gn-detail-grid__cell--value gn-detail-grid__cell--foot-value" role="cell"><span id="gn-val-net">—</span></div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="table-section table-section--last tncn-table-section--figma" aria-labelledby="gn-bracket-title">
+                  <h2 id="gn-bracket-title" class="table-section__heading">(*) Chi tiết thuế thu nhập cá nhân (VND)</h2>
+                  <div class="tncn-bracket-figma-outer">
+                    <div class="tncn-bracket-figma-scroll">
+                      <div class="tncn-bracket-figma" id="gn-bracket-grid" aria-live="polite"></div>
+                    </div>
+                    <div class="tncn-bracket-figma-hscroll" aria-hidden="true">
+                      <div class="tncn-bracket-figma-hscroll__track">
+                        <div class="tncn-bracket-figma-hscroll__thumb"></div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="table-section tncn-table-section--figma gn-employer-table" aria-labelledby="gn-employer-title">
+                  <h2 id="gn-employer-title" class="table-section__heading">Người sử dụng lao động</h2>
+                  <div class="gn-employer-grid" role="table" aria-label="Chi phí bảo hiểm người sử dụng lao động">
+                    <div class="gn-employer-grid__row gn-employer-grid__row--head" role="row">
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--label" role="cell">Lương Gross</div>
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--value" role="cell"><span id="gn-val-emp-gross">—</span></div>
+                    </div>
+                    <div class="gn-employer-grid__row" role="row">
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--label" role="cell">Bảo hiểm xã hội (17%)</div>
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--value" role="cell"><span id="gn-val-emp-bhxh">—</span></div>
+                    </div>
+                    <div class="gn-employer-grid__row" role="row">
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--label" role="cell">Bảo hiểm Tai nạn lao động - Bệnh nghề nghiệp (0.5%)</div>
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--value" role="cell"><span id="gn-val-emp-tnld">—</span></div>
+                    </div>
+                    <div class="gn-employer-grid__row" role="row">
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--label" role="cell">Bảo hiểm y tế (3%)</div>
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--value" role="cell"><span id="gn-val-emp-bhyt">—</span></div>
+                    </div>
+                    <div class="gn-employer-grid__row" role="row">
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--label" role="cell">Bảo hiểm thất nghiệp (1%)</div>
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--value" role="cell"><span id="gn-val-emp-bhtn">—</span></div>
+                    </div>
+                    <div class="gn-employer-grid__row gn-employer-grid__row--foot" role="row">
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--label" role="cell">Tổng cộng</div>
+                      <div class="gn-employer-grid__cell gn-employer-grid__cell--value" role="cell"><span id="gn-val-emp-total">—</span></div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="layout-row__sidebar">
+          <section class="sidebar-block related-posts" aria-labelledby="gn-related-title">
+            <h2 id="gn-related-title" class="sidebar-block__title">Bài viết liên quan</h2>
+            <ul class="related-posts__list">
+              <li><a href="index.html" class="related-posts__item"><img src="https://placehold.co/72x48/f6f3f3/666?text=TNCN" width="72" height="48" class="related-posts__thumb" alt=""><span class="related-posts__item-title">Công cụ tính thuế thu nhập cá nhân chuẩn 2026</span></a></li>
+              <li><a href="#" class="related-posts__item"><img src="https://placehold.co/72x48/f6f3f3/666?text=72x48" width="72" height="48" class="related-posts__thumb" alt=""><span class="related-posts__item-title">Cách đọc bảng lương Gross và các khoản khấu trừ</span></a></li>
+              <li><a href="#" class="related-posts__item"><img src="https://placehold.co/72x48/f6f3f3/666?text=72x48" width="72" height="48" class="related-posts__thumb" alt=""><span class="related-posts__item-title">Trần BHXH và trần BHTN: điểm khác cần nhớ</span></a></li>
+            </ul>
+            <div class="sidebar-block__footer"><a href="#" class="link-more">Xem thêm</a></div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <div class="modal fade region-wage-modal" id="regionWageModal" tabindex="-1" aria-labelledby="regionWageModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered region-wage-modal__dialog">
+      <div class="modal-content region-wage-modal__content">
+        <div class="region-wage-modal__header">
+          <h2 class="region-wage-modal__title" id="regionWageModalTitle">Giải thích mức lương theo vùng</h2>
+          <button type="button" class="btn-close region-wage-modal__btn-dismiss" data-bs-dismiss="modal" aria-label="Đóng"></button>
+        </div>
+        <div id="regionWageModalBodyHost" class="region-wage-modal__body">
+          <!-- Nội dung & cấu trúc theo Figma node 40026-168818; bảng mức + Phụ lục NĐ 293/2025/NĐ-CP -->
+          <section class="region-wage-modal__section" aria-labelledby="region-wage-heading-rates">
+            <div class="region-wage-modal__row">
+              <!-- <span class="region-wage-modal__accent" aria-hidden="true"></span> -->
+              <div class="region-wage-modal__col">
+                <h3 class="region-wage-modal__heading" id="region-wage-heading-rates">Áp dụng mức lương tối thiểu vùng mới nhất có hiệu lực từ ngày 01/01/2026</h3>
+                <p class="region-wage-modal__intro">Theo <strong>Nghị định số 293/2025/NĐ-CP</strong> của Chính phủ (có hiệu lực từ 01/01/2026, thay thế Nghị định 74/2024/NĐ-CP), mức lương tối thiểu tháng và mức lương tối thiểu giờ đối với người lao động làm việc theo vùng được quy định như sau:</p>
+                <div class="region-wage-modal__table-wrap">
+                  <table class="region-wage-modal__table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Vùng</th>
+                        <th scope="col">Mức lương tối thiểu tháng <span class="region-wage-modal__th-sub">(đồng/tháng)</span></th>
+                        <th scope="col">Mức lương tối thiểu giờ <span class="region-wage-modal__th-sub">(đồng/giờ)</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Vùng I</th>
+                        <td>5.310.000</td>
+                        <td>25.500</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Vùng II</th>
+                        <td>4.730.000</td>
+                        <td>22.700</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Vùng III</th>
+                        <td>4.140.000</td>
+                        <td>20.000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Vùng IV</th>
+                        <td>3.700.000</td>
+                        <td>17.800</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="region-wage-modal__section" aria-labelledby="region-wage-heading-annex">
+            <div class="region-wage-modal__row">
+              <!-- <span class="region-wage-modal__accent" aria-hidden="true"></span> -->
+              <div class="region-wage-modal__col">
+                <h3 class="region-wage-modal__heading" id="region-wage-heading-annex">Danh mục địa bàn cấp xã áp dụng mức lương tối thiểu (áp dụng từ 01/01/2026)</h3>
+                <div class="region-wage-modal__annex-host" id="regionWageAnnexHost">
+<!-- Danh mục 34 tỉnh/thành — trích cấu trúc theo Phụ lục NĐ 293/2025/NĐ-CP (tham chiếu Chính phủ / VBPL). Figma: node 40026-168818. -->
+<h4 class="region-wage-modal__annex-h4">1. Thành phố Hà Nội</h4>
+<p class="region-wage-modal__annex-p">Vùng I, gồm các phường Hoàn Kiếm, Cửa Nam, Ba Đình, Ngọc Hà, Giảng Võ, Hai Bà Trưng, Vĩnh Tuy, Bạch Mai, Đống Đa, Kim Liên, Văn Miếu - Quốc Tử Giám, Láng, Ô Chợ Dừa, Hồng Hà, Lĩnh Nam, Hoàng Mai, Vĩnh Hưng, Tương Mai, Định Công, Hoàng Liệt, Yên Sở, Thanh Xuân, Khương Đình, Phương Liệt, Cầu Giấy, Nghĩa Đô, Yên Hoà, Tây Hồ, Phú Thượng, Tây Tựu, Phú Diễn, Xuân Đỉnh, Đông Ngạc, Thượng Cát, Từ Liêm, Xuân Phương, Tây Mỗ, Đại Mỗ, Long Biên, Bồ Đề, Việt Hưng, Phúc Lợi, Hà Đông, Dương Nội, Yên Nghĩa, Phú Lương, Kiến Hưng, Thanh Liệt, Chương Mỹ, Sơn Tây, Tùng Thiện và các xã Thanh Trì, Đại Thanh, Nam Phù, Ngọc Hồi, Thượng Phúc, Thường Tín, Chương Dương, Hồng Vân, Phú Xuyên, Thanh Oai, Bình Minh, Tam Hưng, Dân Hòa, Phú Nghĩa, Xuân Mai, Trần Phú, Hoà Phú, Quảng Bị, Yên Bài, Đoài Phương, Thạch Thất, Hạ Bằng, Tây Phương, Hoà Lạc, Yên Xuân, Quốc Oai, Hưng Đạo, Kiều Phú, Phú Cát, Hoài Đức, Dương Hoà, Sơn Đồng, An Khánh, Gia Lâm, Thuận An, Bát Tràng, Phù Đổng, Thư Lâm, Đông Anh, Phúc Thịnh, Thiên Lộc, Vĩnh Thanh, Mê Linh, Yên Lãng, Tiến Thắng, Quang Minh, Sóc Sơn, Đa Phúc, Nội Bài, Trung Giã, Kim Anh, Ô Diên, Liên Minh.</p>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">2. Tỉnh Cao Bằng</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Thục Phán, Nùng Trí Cao, Tân Giang.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">3. Tỉnh Tuyên Quang</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Mỹ Lâm, Minh Xuân, Nông Tiến, An Tường, Bình Thuận, Hà Giang 1, Hà Giang 2 và xã Ngọc Đường.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">4. Tỉnh Điện Biên</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Điện Biên Phủ, Mường Thanh và xã Mường Phăng, Nà Tấu.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">5. Tỉnh Lai Châu</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Tân Phong, Đoàn Kết.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">6. Tỉnh Sơn La</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Tô Hiệu, Chiềng An, Chiềng Cơi, Chiềng Sinh.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">7. Tỉnh Lào Cai</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Cam Đường, Lào Cai và các xã Cốc San, Hợp Thành, Gia Phú.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Văn Phú, Yên Bái, Nam Cường, Âu Lâu, Sa Pa và các xã Phong Hải, Xuân Quang, Bảo Thắng, Tằng Loỏng, Mường Bo, Bản Hồ, Tả Phìn, Tả Van, Ngũ Chỉ Sơn.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">8. Tỉnh Thái Nguyên</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Phan Đình Phùng, Linh Sơn, Tích Lương, Gia Sàng, Quyết Thắng, Quan Triều, Phổ Yên, Vạn Xuân, Trung Thành, Phúc Thuận, Sông Công, Bá Xuyên, Bách Quang và các xã Tân Cương, Đại Phúc, Thành Công.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Đức Xuân, Bắc Kạn và các xã Đại Từ, Đức Lương, Phú Thịnh, La Bằng, Phú Lạc, An Khánh, Quân Chu, Vạn Phú, Phú Xuyên, Phú Bình, Tân Thành, Điềm Thụy, Kha Sơn, Tân Khánh, Đồng Hỷ, Quang Sơn, Trại Cau, Nam Hòa, Văn Hán, Văn Lăng, Phú Lương, Vô Tranh, Yên Trạch, Hợp Thành, Phong Quang.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">9. Tỉnh Lạng Sơn</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Tam Thanh, Lương Văn Tri, Kỳ Lừa, Đông Kinh.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">10. Tỉnh Quảng Ninh</h4>
+<p class="region-wage-modal__annex-p">Vùng I, gồm các phường An Sinh, Đông Triều, Bình Khê, Mạo Khê, Hoàng Quế, Yên Tử, Vàng Danh, Uông Bí, Đông Mai, Hiệp Hoà, Quảng Yên, Hà An, Phong Cốc, Liên Hoà, Tuần Châu, Việt Hưng, Bãi Cháy, Hà Tu, Hà Lầm, Cao Xanh, Hồng Gai, Hạ Long, Hoành Bồ, Móng Cái 1, Móng Cái 2, Móng Cái 3 và các xã Quảng La, Thống Nhất, Hải Sơn, Hải Ninh, Vĩnh Thực.</p>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Mông Dương, Quang Hanh, Cẩm Phả, Cửa Ông và xã Hải Hòa.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã Tiên Yên, Điền Xá, Đông Ngũ, Hải Lạng, Quảng Tân, Đầm Hà, Quảng Hà, Đường Hoa, Quảng Đức, Cái Chiên và đặc khu Vân Đồn.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường và đặc khu còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">11. Tỉnh Bắc Ninh</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Kinh Bắc, Võ Cường, Vũ Ninh, Hạp Lĩnh, Nam Sơn, Từ Sơn, Tam Sơn, Đồng Nguyên, Phù Khê, Thuận Thành, Mão Điền, Trạm Lộ, Trí Quả, Song Liễu, Ninh Xá, Quế Võ, Phương Liễu, Nhân Hoà, Đào Viên, Bồng Lai, Tự Lan, Việt Yên, Nếnh, Vân Hà, Bắc Giang, Đa Mai, Tiền Phong, Tân An, Yên Dũng, Tân Tiến, Cảnh Thuỵ và các xã Chi Lăng, Phù Lãng, Yên Phong, Văn Môn, Tam Giang, Yên Trung, Tam Đa, Tiên Du, Liên Bão, Tân Chi, Đại Đồng, Phật Tích, Gia Bình, Nhân Thắng, Đại Lai, Cao Đức, Đông Cứu, Lương Tài, Lâm Thao, Trung Chính, Trung Kênh, Đồng Việt.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã Lạng Giang, Mỹ Thái, Kép, Tân Dĩnh, Tiên Lục, Tân Yên, Ngọc Thiện, Nhã Nam, Phúc Hòa, Quang Trung, Hợp Thịnh, Hiệp Hòa, Hoàng Vân, Xuân Cẩm.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">12. Tỉnh Phú Thọ</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Việt Trì, Nông Trang, Thanh Miếu, Vân Phú, Vĩnh Phúc, Vĩnh Yên, Phúc Yên, Xuân Hòa, Hòa Bình, Kỳ Sơn, Tân Hòa, Thống Nhất và các xã Hy Cương, Yên Lạc, Tề Lỗ, Liên Châu, Tam Hồng, Nguyệt Đức, Bình Nguyên, Xuân Lãng, Bình Xuyên, Bình Tuyền, Lương Sơn, Cao Dương, Liên Sơn, Thịnh Minh.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Phong Châu, Phú Thọ, Âu Cơ và các xã Lâm Thao, Xuân Lũng, Phùng Nguyên, Bản Nguyên, Phù Ninh, Dân Chủ, Phú Mỹ, Trạm Thản, Bình Phú, Thanh Ba, Quảng Yên, Hoàng Cương, Đông Thành, Chí Tiên, Liên Minh, Tam Nông, Thọ Văn, Vạn Xuân, Hiền Quan, Tam Sơn, Sông Lô, Hải Lựu, Yên Lãng, Lập Thạch, Tiên Lữ, Thái Hòa, Liên Hòa, Hợp Lý, Sơn Đông, Tam Đảo, Đại Đình, Đạo Trù, Tam Dương, Hội Thịnh, Hoàng An, Tam Dương Bắc, Vĩnh Tường, Thổ Tang, Vĩnh Hưng, Vĩnh An, Vĩnh Phú, Vĩnh Thành.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">13. Thành phố Hải Phòng</h4>
+<p class="region-wage-modal__annex-p">Vùng I, gồm các phường Thuỷ Nguyên, Thiên Hương, Hoà Bình, Nam Triệu, Bạch Đằng, Lưu Kiếm, Lê Ích Mộc, Hồng Bàng, Hồng An, Ngô Quyền, Gia Viên, Lê Chân, An Biên, Hải An, Đông Hải, Kiến An, Phù Liễn, Nam Đồ Sơn, Đồ Sơn, Hưng Đạo, Dương Kinh, An Dương, An Hải, An Phong, Hải Dương, Lê Thanh Nghị, Việt Hoà, Thành Đông, Nam Đồng, Tân Hưng, Thạch Khôi, Tứ Minh, Ái Quốc, Chu Văn An, Chí Linh, Trần Hưng Đạo, Nguyễn Trãi, Trần Nhân Tông, Lê Đại Hành, Kinh Môn, Nguyễn Đại Năng, Trần Liễu, Bắc An Phụ, Phạm Sư Mạnh, Nhị Chiểu; các xã An Hưng, An Khánh, An Quang, An Trường, An Lão, Kiến Thuỵ, Kiến Minh, Kiến Hải, Kiến Hưng, Nghi Dương, Quyết Thắng, Tiên Lãng, Tân Minh, Tiên Minh, Chấn Hưng, Hùng Thắng, Vĩnh Bảo, Nguyễn Bỉnh Khiêm, Vĩnh Am, Vĩnh Hải, Vĩnh Hoà, Vĩnh Thuận, Vĩnh Thịnh, Việt Khê, Nam An Phụ, Nam Sách, Thái Tân, Hợp Tiến, Trần Phú, An Phú, Cẩm Giang, Cẩm Giàng, Tuệ Tĩnh, Mao Điền, Kẻ Sặt, Bình Giang, Đường An, Thượng Hồng, Gia Lộc, Yết Kiêu, Gia Phúc, Trường Tân, Tứ Kỳ, Tân Kỳ, Đại Sơn, Chí Minh, Lạc Phượng, Nguyên Giáp, Nguyễn Lương Bằng, Phú Thái, Lai Khê, An Thành, Kim Thành và đặc khu Cát Hải.</p>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các xã Thanh Hà, Hà Tây, Hà Bắc, Hà Nam, Hà Đông, Ninh Giang, Vĩnh Lại, Khúc Thừa Dụ, Tân An, Hồng Châu, Thanh Miện, Bắc Thanh Miện, Nam Thanh Miện, Hải Hưng và đặc khu Bạch Long Vĩ.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">14. Tỉnh Hưng Yên</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Phố Hiến, Sơn Nam, Hồng Châu, Mỹ Hào, Đường Hào, Thượng Hồng, Thái Bình, Trần Lãm, Trần Hưng Đạo, Trà Lý, Vũ Phúc và các xã Tân Hưng, Yên Mỹ, Việt Yên, Hoàn Long, Nguyễn Văn Linh, Như Quỳnh, Lạc Đạo, Đại Đồng, Nghĩa Trụ, Phụng Công, Văn Giang, Mễ Sở.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã Hoàng Hoa Thám, Tiên Lữ, Tiên Hoa, Quang Hưng, Đoàn Đào, Tiên Tiến, Tống Trân, Lương Bằng, Nghĩa Dân, Hiệp Cường, Đức Hợp, Ân Thi, Xuân Trúc, Phạm Ngũ Lão, Nguyễn Trãi, Hồng Quang, Khoái Châu, Triệu Việt Vương, Việt Tiến, Chí Minh, Châu Ninh, Thái Thụy, Đông Thụy Anh, Bắc Thụy Anh, Thụy Anh, Nam Thụy Anh, Bắc Thái Ninh, Thái Ninh, Đông Thái Ninh, Nam Thái Ninh, Tây Thái Ninh, Tây Thụy Anh, Tiền Hải, Tây Tiền Hải, Ái Quốc, Đồng Châu, Đông Tiền Hải, Nam Cường, Hưng Phú, Nam Tiền Hải.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">15. Tỉnh Ninh Bình</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Tây Hoa Lư, Hoa Lư, Nam Hoa Lư, Đông Hoa Lư, Nam Định, Thiên Trường, Đông A, Vị Khê, Thành Nam, Trường Thi, Hồng Quang, Mỹ Lộc.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Tam Điệp, Yên Sơn, Trung Sơn, Yên Thắng, Hà Nam, Phủ Lý, Phù Vân, Châu Sơn, Liêm Tuyền, Duy Tiên, Duy Tân, Đồng Văn, Duy Hà, Tiên Sơn, Lê Hồ, Nguyễn Úy, Lý Thường Kiệt, Kim Thanh, Tam Chúc, Kim Bảng và các xã Gia Viễn, Đại Hoàng, Gia Hưng, Gia Phong, Gia Vân, Gia Trấn, Yên Khánh, Khánh Nhạc, Khánh Thiện, Khánh Hội, Khánh Trung, Nam Trực, Nam Minh, Nam Đồng, Nam Ninh, Nam Hồng, Minh Tân, Hiển Khánh, Vụ Bản, Liên Minh, Ý Yên, Yên Đồng, Yên Cường, Vạn Thắng, Vũ Dương, Tân Minh, Phong Doanh, Cổ Lễ, Ninh Giang, Cát Thành, Trực Ninh, Quang Hưng, Minh Thái, Ninh Cường, Xuân Trường, Xuân Hưng, Xuân Giang, Xuân Hồng, Hải Hậu, Hải Anh, Hải Tiến, Hải Hưng, Hải An, Hải Quang, Hải Xuân, Hải Thịnh, Giao Minh, Giao Hòa, Giao Thủy, Giao Phúc, Giao Hưng, Giao Bình, Giao Ninh, Đồng Thịnh, Nghĩa Hưng, Nghĩa Sơn, Hồng Phong, Quỹ Nhất, Nghĩa Lâm, Rạng Đông.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">16. Tỉnh Thanh Hóa</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Hạc Thành, Quảng Phú, Đông Quang, Đông Sơn, Đông Tiến, Hàm Rồng, Nguyệt Viên, Sầm Sơn, Nam Sầm Sơn, Bỉm Sơn, Quang Trung, Ngọc Sơn, Tân Dân, Hải Lĩnh, Tĩnh Gia, Đào Duy Từ, Hải Bình, Trúc Lâm, Nghi Sơn và các xã Trường Lâm, Các Sơn.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã Hà Trung, Tống Sơn, Hà Long, Hoạt Giang, Lĩnh Toại, Triệu Lộc, Đông Thành, Hậu Lộc, Hoa Lộc, Vạn Lộc, Nga Sơn, Nga Thắng, Hồ Vương, Tân Tiến, Nga An, Ba Đình, Hoằng Hóa, Hoằng Tiến, Hoằng Thanh, Hoằng Lộc, Hoằng Châu, Hoằng Sơn, Hoằng Phú, Hoằng Giang, Lưu Vệ, Quảng Yên, Quảng Ngọc, Quảng Ninh, Quảng Bình, Tiên Trang, Quảng Chính, Nông Cống, Thắng Lợi, Trung Chính, Trường Văn, Thăng Bình, Tượng Lĩnh, Công Chính, Thiệu Hóa, Thiệu Quang, Thiệu Tiến, Thiệu Toán, Thiệu Trung, Yên Định, Yên Trường, Yên Phú, Quý Lộc, Yên Ninh, Định Tân, Định Hòa, Thọ Xuân, Thọ Long, Xuân Hòa, Sao Vàng, Lam Sơn, Thọ Lập, Xuân Tín, Xuân Lập, Vĩnh Lộc, Tây Đô, Biện Thượng, Triệu Sơn, Thọ Bình, Thọ Ngọc, Thọ Phú, Hợp Tiến, An Nông, Tân Ninh, Đồng Tiến.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">17. Tỉnh Nghệ An</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Hoàng Mai, Tân Mai, Trường Vinh, Thành Vinh, Vinh Hưng, Vinh Phú, Vinh Lộc, Cửa Lò và các xã Hưng Nguyên, Yên Trung, Hưng Nguyên Nam, Lam Thành, Nghi Lộc, Phúc Lộc, Đông Lộc, Trung Lộc, Thần Lĩnh, Hải Lộc, Văn Kiều.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Quỳnh Mai, Thái Hòa, Tây Hiếu và các xã Diễn Châu, Đức Châu, Quảng Châu, Hải Châu, Tân Châu, An Châu, Minh Châu, Hùng Châu, Đô Lương, Bạch Ngọc, Văn Hiến, Bạch Hà, Thuần Trung, Lương Sơn, Vạn An, Nam Đàn, Đại Huệ, Thiên Nhẫn, Kim Liên, Nghĩa Đàn, Nghĩa Thọ, Nghĩa Lâm, Nghĩa Mai, Nghĩa Hưng, Nghĩa Khánh, Nghĩa Lộc, Quỳnh Lưu, Quỳnh Văn, Quỳnh Anh, Quỳnh Tam, Quỳnh Phú, Quỳnh Sơn, Quỳnh Thắng, Đông Hiếu, Yên Thành, Quan Thành, Hợp Minh, Vân Tụ, Vân Du, Quang Đồng, Giai Lạc, Bình Minh, Đông Thành.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">18. Tỉnh Hà Tĩnh</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Sông Trí, Hải Ninh, Hoành Sơn, Vũng Áng, Thành Sen, Trần Phú, Hà Huy Tập và các xã Thạch Lạc, Đồng Tiến, Thạch Khê, Cẩm Bình, Kỳ Hoa.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">19. Tỉnh Quảng Trị</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Đồng Hới, Đồng Thuận, Đồng Sơn, Đông Hà, Nam Đông Hà.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Quảng Trị, Ba Đồn, Bắc Gianh và các xã Nam Gianh, Nam Ba Đồn, Tân Gianh, Trung Thuần, Quảng Trạch, Hòa Trạch, Phú Trạch, Phong Nha, Bắc Trạch, Đông Trạch, Hoàn Lão, Bố Trạch, Nam Trạch, Quảng Ninh, Ninh Châu, Trường Ninh, Lệ Thủy, Cam Hồng, Sen Ngư, Tân Mỹ, Trường Phú, Lệ Ninh, Đồng Lê, Vĩnh Linh, Cửa Tùng, Bến Quan, Cửa Việt, Gio Linh, Cam Lộ, Khe Sanh, Lao Bảo, Triệu Phong, Hướng Hiệp, Diên Sanh.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường và đặc khu còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">20. Thành phố Huế</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Thuận An, Hóa Châu, Mỹ Thượng, Vỹ Dạ, Thuận Hóa, An Cựu, Thủy Xuân, Kim Long, Hương An, Phú Xuân, Dương Nỗ.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Phong Điền, Phong Thái, Phong Dinh, Phong Phú, Phong Quảng, Hương Trà, Kim Trà, Hương Thuỷ, Phú Bài, Thanh Thủy và các xã Đan Điền, Quảng Điền, Bình Điền, Phú Vinh, Phú Hồ, Phú Vang, Vinh Lộc, Hưng Lộc, Lộc An, Phú Lộc, Chân Mây - Lăng Cô, Long Quảng, Nam Đông, Khe Tre.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">21. Thành phố Đà Nẵng</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Hải Châu, Hòa Cường, Thanh Khê, An Khê, An Hải, Sơn Trà, Ngũ Hành Sơn, Hòa Khánh, Hải Vân, Liên Chiểu, Cẩm Lệ, Hòa Xuân, Tam Kỳ, Quảng Phú, Hương Trà, Bàn Thạch, Hội An, Hội An Đông, Hội An Tây và các xã Hòa Vang, Hòa Tiến, Bà Nà, Tân Hiệp và đặc khu Hoàng Sa.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Điện Bàn, Điện Bàn Đông, An Thắng, Điện Bàn Bắc và các xã Núi Thành, Tam Mỹ, Tam Anh, Đức Phú, Tam Xuân, Tam Hải, Tây Hồ, Chiên Đàn, Phú Ninh, Thăng Bình, Thăng An, Thăng Trường, Thăng Điền, Thăng Phú, Đồng Dương, Quế Sơn Trung, Quế Sơn, Xuân Phú, Nông Sơn, Quế Phước, Duy Nghĩa, Nam Phước, Duy Xuyên, Thu Bồn, Điện Bàn Tây, Gò Nổi, Đại Lộc, Hà Nha, Thượng Đức, Vu Gia, Phú Thuận.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">22. Tỉnh Quảng Ngãi</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Trương Quang Trọng, Cẩm Thành, Nghĩa Lộ, Kon Tum, Đăk Cấm, Đăk Bla và các xã Tịnh Khê, An Phú, Bình Minh, Bình Chương, Bình Sơn, Vạn Tường, Đông Sơn, Trường Giang, Ba Gia, Sơn Tịnh, Thọ Phong, Ngọk Bay, Ia Chim, Đăk Rơ Wa, Đăk Pxi, Đăk Mar, Đăk Ui, Đăk Hà, Ngọk Réo.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường và đặc khu còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">23. Tỉnh Gia Lai</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Quy Nhơn, Quy Nhơn Đông, Quy Nhơn Tây, Quy Nhơn Nam, Quy Nhơn Bắc, Pleiku, Hội Phú, Thống Nhất, Diên Hồng, An Phú và các xã Biển Hồ, Gào.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">24. Tỉnh Khánh Hòa</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Nha Trang, Bắc Nha Trang, Tây Nha Trang, Nam Nha Trang, Bắc Cam Ranh, Cam Ranh, Cam Linh, Ba Ngòi, Ninh Hòa, Đông Ninh Hòa, Hòa Thắng, Phan Rang, Đông Hải, Ninh Chử, Bảo An, Đô Vinh và các xã Nam Cam Ranh, Bắc Ninh Hòa, Tân Định, Nam Ninh Hòa, Tây Ninh Hòa, Hòa Trí, Thuận Bắc, Công Hải.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã Đại Lãnh, Tu Bông, Vạn Thắng, Vạn Ninh, Vạn Hưng, Diên Khánh, Diên Lạc, Diên Điền, Suối Hiệp, Diên Thọ, Diên Lâm, Cam Lâm, Suối Dầu, Cam Hiệp, Cam An, Ninh Phước, Phước Hữu, Phước Hậu, Phước Dinh, Ninh Hải, Xuân Hải, Vĩnh Hải, Ninh Sơn, Lâm Sơn, Anh Dũng, Mỹ Sơn, Thuận Nam, Cà Ná, Phước Hà.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường và đặc khu còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">25. Tỉnh Đắk Lắk</h4>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Buôn Ma Thuột, Tân An, Tân Lập, Xuân Đài, Sông Cầu, Thành Nhất, Ea Kao, Tuy Hòa, Phú Yên, Bình Kiến, Đông Hòa, Hòa Hiệp và các xã Hòa Phú, Xuân Thọ, Xuân Cảnh, Xuân Lộc, Hòa Xuân.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">26. Tỉnh Lâm Đồng</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Xuân Hương - Đà Lạt, Cam Ly - Đà Lạt, Lâm Viên - Đà Lạt, Xuân Trường - Đà Lạt, Lang Biang - Đà Lạt, 1 Bảo Lộc, 2 Bảo Lộc, 3 Bảo Lộc, B&#x27; Lao, Hàm Thắng, Bình Thuận, Mũi Né, Phú Thủy, Phan Thiết, Tiến Thành và xã Tuyên Quang.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường La Gi, Phước Hội, Bắc Gia Nghĩa, Nam Gia Nghĩa, Đông Gia Nghĩa và các xã Hiệp Thạnh, Đức Trọng, Tân Hội, Tà Hine, Tà Năng, Đinh Văn Lâm Hà, Di Linh, Hòa Ninh, Hòa Bắc, Đinh Trang Thượng, Bảo Thuận, Sơn Điền, Gia Hiệp, Tân Hải, Đông Giang, La Dạ, Hàm Thuận Bắc, Hàm Thuận, Hồng Sơn, Hàm Liêm, Hàm Thạnh, Hàm Kiệm, Tân Thành, Hàm Thuận Nam, Tân Lập, Ninh Gia.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường và đặc khu còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">27. Tỉnh Đồng Nai</h4>
+<p class="region-wage-modal__annex-p">Vùng I, gồm các phường Biên Hòa, Trấn Biên, Tam Hiệp, Long Bình, Trảng Dài, Hố Nai, Long Hưng, Bình Lộc, Bảo Vinh, Xuân Lập, Long Khánh, Hàng Gòn, Tân Triều, Phước Tân, Tam Phước và các xã Đại Phước, Nhơn Trạch, Phước An, Phước Thái, Long Phước, Bình An, Long Thành, An Phước, An Viễn, Bình Minh, Trảng Bom, Bàu Hàm, Hưng Thịnh, Dầu Giây, Gia Kiệm, Thống Nhất, Xuân Đường, Xuân Đông, Xuân Định, Xuân Phú, Xuân Lộc, Xuân Hòa, Xuân Thành, Xuân Bắc, Trị An, Tân An, Phú Lý.</p>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Minh Hưng, Chơn Thành, Đồng Xoài, Bình Phước và các xã Xuân Quế, Cẩm Mỹ, Sông Ray, La Ngà, Định Quán, Phú Vinh, Phú Hòa, Tà Lài, Nam Cát Tiên, Tân Phú, Phú Lâm, Nha Bích, Tân Quan, Thuận Lợi, Đồng Tâm, Tân Lợi, Đồng Phú, Đak Lua, Thanh Sơn.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Bình Long, An Lộc, Phước Bình, Phước Long và các xã Tân Hưng, Tân Khai, Minh Đức, Lộc Thành, Lộc Ninh, Lộc Hưng, Lộc Tấn, Lộc Thạnh, Lộc Quang, Tân Tiến, Bình Tân, Long Hà, Phú Riềng, Phú Trung.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">28. Thành phố Hồ Chí Minh</h4>
+<p class="region-wage-modal__annex-p">Vùng I, gồm các phường Sài Gòn, Tân Định, Bến Thành, Cầu Ông Lãnh, Bàn Cờ, Xuân Hoà, Nhiêu Lộc, Xóm Chiếu, Khánh Hội, Vĩnh Hội, Chợ Quán, An Đông, Chợ Lớn, Bình Tây, Bình Phú, Bình Tiên, Phú Lâm, Tân Thuận, Phú Thuận, Tân Mỹ, Tân Hưng, Chánh Hưng, Phú Định, Bình Đông, Diên Hồng, Vườn Lài, Hoà Hưng, Minh Phụng, Bình Thới, Hoà Bình, Phú Thọ, Đông Hưng Thuận, Trung Mỹ Tây, Tân Thới Hiệp, Thới An, An Phú Đông, An Lạc, Tân Tạo, Bình Tân, Bình Trị Đông, Bình Hưng Hoà, Gia Định, Bình Thạnh, Bình Lợi Trung, Thạnh Mỹ Tây, Bình Quới, Hạnh Thông, An Nhơn, Gò Vấp, An Hội Đông, Thông Tây Hội, An Hội Tây, Đức Nhuận, Cầu Kiệu, Phú Nhuận, Tân Sơn Hoà, Tân Sơn Nhất, Tân Hoà, Bảy Hiền, Tân Bình, Tân Sơn, Tân Thạnh, Tân Sơn Nhì, Phú Thọ Hoà, Tân Phú, Phú Thạnh, Hiệp Bình, Thủ Đức, Tam Bình, Linh Xuân, Tăng Nhơn Phú, Long Bình, Long Phước, Long Trường, Cát Lái, Bình Trưng, Phước Long, An Khánh, Đông Hoà, Dĩ An, Tân Đông Hiệp, An Phú, Bình Hoà, Lái Thiêu, Thuận An, Thuận Giao, Thủ Dầu Một, Phú Lợi, Chánh Hiệp, Bình Dương, Hoà Lợi, Thới Hoà, Phú An, Tây Nam, Long Nguyên, Bến Cát, Chánh Phú Hoà, Vĩnh Tân, Bình Cơ, Tân Uyên, Tân Hiệp, Tân Khánh, Vũng Tàu, Tam Thắng, Rạch Dừa, Phước Thắng, Tân Hải, Tân Phước, Phú Mỹ, Tân Thành và các xã Vĩnh Lộc, Tân Vĩnh Lộc, Bình Lợi, Tân Nhựt Bình Chánh, Hưng Long, Bình Hưng, Củ Chi, Tân An Hội, Thái Mỹ, An Nhơn Tây, Nhuận Đức, Phú Hoà Đông, Bình Mỹ, Đông Thạnh, Hóc Môn, Xuân Thới Sơn, Bà Điểm, Nhà Bè, Hiệp Phước, Thường Tân, Bắc Tân Uyên, Phú Giáo, Phước Hoà, Phước Thành, An Long, Trừ Văn Thố, Bàu Bàng, Long Hoà, Thanh An, Dầu Tiếng, Minh Thạnh, Long Sơn, Châu Pha.</p>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Bà Rịa, Long Hương, Tam Long và các xã Bình Khánh, An Thới Đông, Cần Giờ, Thạnh An; các xã Kim Long, Châu Đức, Ngãi Giao, Nghĩa Thành, Long Hải, Long Điền và đặc khu Côn Đảo.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã, phường và đặc khu còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">29. Tỉnh Tây Ninh</h4>
+<p class="region-wage-modal__annex-p">Vùng I, gồm các phường Long An, Tân An, Khánh Hậu và các xã An Ninh, Hiệp Hòa, Hậu Nghĩa, Hòa Khánh, Đức Lập, Mỹ Hạnh, Đức Hòa, Thạnh Lợi, Bình Đức, Lương Hòa, Bến Lức, Mỹ Yên, Phước Lý, Mỹ Lộc, Cần Giuộc, Phước Vĩnh Tây, Tân Tập.</p>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Kiến Tường, Tân Ninh, Bình Minh, Ninh Thạnh, Long Hoa, Hòa Thành, Thanh Điền, Trảng Bàng, An Tịnh, Gò Dầu, Gia Lộc và các xã Tuyên Thạnh, Bình Hiệp, Thủ Thừa, Mỹ An, Mỹ Thạnh, Tân Long, Long Cang, Rạch Kiến, Mỹ Lệ, Tân Lân, Cần Đước, Long Hựu, Hưng Thuận, Phước Chỉ, Thạnh Đức, Phước Thạnh, Truông Mít, Nhựt Tảo.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các xã Bình Thành, Thạnh Phước, Thạnh Hoá, Tân Tây, Mỹ Quý, Đông Thành, Đức Huệ, Vàm Cỏ, Tân Trụ, Thuận Mỹ, An Lục Long, Tầm Vu, Vĩnh Công, Lộc Ninh, Cầu Khởi, Dương Minh Châu, Tân Đông, Tân Châu, Tân Phú, Tân Hội, Tân Thành, Tân Hoà, Tân Lập, Tân Biên, Thạnh Bình, Trà Vong, Phước Vinh, Hoà Hội, Ninh Điền, Châu Thành, Hảo Đước, Long Chữ, Long Thuận, Bến Cầu.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">30. Tỉnh Đồng Tháp</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Mỹ Tho, Đạo Thạnh, Mỹ Phong, Thới Sơn, Trung An và các xã Tân Hương, Châu Thành, Long Hưng, Long Định, Vĩnh Kim, Kim Sơn, Bình Trưng.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Gò Công, Long Thuận, Sơn Qui, Bình Xuân, Mỹ Phước Tây, Thanh Hòa, Cai Lậy, Nhị Quý, An Bình, Hồng Ngự, Thường Lạc, Cao Lãnh, Mỹ Ngãi, Mỹ Trà, Sa Đéc và các xã Tân Phú, Tân Phước 1, Tân Phước 2, Tân Phước 3, Hưng Thạnh, Mỹ Tịnh An, Lương Hòa Lạc, Tân Thuận Bình, Chợ Gạo, An Thạnh Thủy, Bình Ninh, Tân Dương.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">31. Tỉnh Vĩnh Long</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Thanh Đức, Long Châu, Phước Hậu, Tân Hạnh, Tân Ngãi, Bình Minh, Cái Vồn, Đông Thành, An Hội, Phú Khương, Bến Tre, Sơn Đông, Phú Tân, Long Đức, Trà Vinh, Nguyệt Hóa, Hòa Thuận và các xã Phú Túc, Giao Long, Tiên Thủy, Tân Phú.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Duyên Hải, Trường Long Hòa và các xã Cái Nhum, Tân Long Hội, Nhơn Phú, Bình Phước, An Bình, Long Hồ, Phú Quới, Đồng Khởi, Mỏ Cày, Thành Thới, An Định, Hương Mỹ, Tân Thủy, Bảo Thạnh, Ba Tri, Tân Xuân, Mỹ Chánh Hòa, An Ngãi Trung, An Hiệp, Thới Thuận, Thạnh Phước, Bình Đại, Thạnh Trị, Lộc Thuận, Châu Hưng, Phú Thuận, Long Hữu, Hưng Nhượng.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">32. Tỉnh An Giang</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Long Xuyên, Bình Đức, Mỹ Thới, Châu Đốc, Vĩnh Tế, Vĩnh Thông, Rạch Giá, Hà Tiên, Tô Châu; các xã Mỹ Hòa Hưng, Tiên Hải và các đặc khu Phú Quốc, Thổ Châu.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Tân Châu, Long Phú; các xã Tân An, Châu Phong, Vĩnh Xương, Châu Phú, Mỹ Đức, Vĩnh Thạnh Trung, Bình Mỹ, Thạnh Mỹ Tây, An Châu, Bình Hòa, Cần Đăng, Vĩnh Hanh, Vĩnh An, Thoại Sơn, Óc Eo, Định Mỹ, Phú Hòa, Vĩnh Trạch, Tây Phú, Thạnh Lộc, Châu Thành, Bình An, Hòa Điền, Kiên Lương, Sơn Hải, Hòn Nghệ và đặc khu Kiên Hải.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">33. Thành phố Cần Thơ</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường Phú Lợi, Mỹ Xuyên, Ninh Kiều, Cái Khế, Tân An, An Bình, Thới An Đông, Bình Thủy, Long Tuyền, Cái Răng, Hưng Phú, Ô Môn, Thới Long, Phước Thới, Trung Nhứt, Thốt Nốt, Thuận Hưng, Tân Lộc, Sóc Trăng.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Vị Thanh, Vị Tân, Đại Thành, Ngã Bảy, Vĩnh Phước, Vĩnh Châu, Khánh Hòa, Ngã Năm, Mỹ Quới và các xã Tân Long, Phong Điền, Nhơn Ái, Trường Long, Thới Lai, Đông Thuận, Trường Xuân, Trường Thành, Cờ Đỏ, Đông Hiệp, Thạnh Phú, Thới Hưng, Trung Hưng, Vĩnh Thạnh, Vĩnh Trinh, Thạnh An, Thạnh Quới, Hỏa Lựu, Thạnh Xuân, Tân Hòa, Trường Long Tây, Châu Thành, Đông Phước, Phú Hữu, Vĩnh Hải, Lai Hòa.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+<h4 class="region-wage-modal__annex-h4">34. Tỉnh Cà Mau</h4>
+<p class="region-wage-modal__annex-p">Vùng II, gồm các phường An Xuyên, Lý Văn Lâm, Tân Thành, Hòa Thành, Bạc Liêu, Vĩnh Trạch, Hiệp Thành.</p>
+<p class="region-wage-modal__annex-p">Vùng III, gồm các phường Giá Rai, Láng Tròn và các xã U Minh, Nguyễn Phích, Khánh Lâm, Khánh An, Khánh Bình, Đá Bạc, Khánh Hưng, Sông Đốc, Trần Văn Thời, Đất Mới, Năm Căn, Tam Giang, Lương Thế Trân, Hưng Mỹ, Cái Nước, Tân Hưng, Phú Mỹ, Phong Thạnh, Hòa Bình, Vĩnh Mỹ, Vĩnh Hậu.</p>
+<p class="region-wage-modal__annex-p">Vùng IV, gồm các xã, phường còn lại.</p>
+                </div>
+                <p class="region-wage-modal__annex-source">Nguồn đối chiếu nội dung Phụ lục: <a href="https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=183939" target="_blank" rel="noopener noreferrer">Cổng VBPL — 293/2025/NĐ-CP</a> · <a href="https://xaydungchinhsach.chinhphu.vn/danh-muc-dia-ban-ap-dung-muc-luong-toi-thieu-tu-01-01--2026-11925111017422725.htm" target="_blank" rel="noopener noreferrer">Chính phủ — Chi tiết danh mục địa bàn</a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer region-wage-modal__footer">
+          <button type="button" class="btn region-wage-modal__footer-btn" data-bs-dismiss="modal">Đóng lại</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom sheet chung (mobile) — NPT Figma 40277:55564; Gross / BH khác; Vùng = cùng nội dung #regionWageModalBodyHost -->
+  <div id="tncn-deps-sheet" class="tncn-mobile-sheet" hidden aria-hidden="true">
+    <div class="tncn-mobile-sheet__backdrop" data-tncn-mobile-sheet-dismiss tabindex="-1"></div>
+    <div class="tncn-mobile-sheet__panel tncn-mobile-sheet__panel--compact" role="dialog" aria-modal="true" aria-labelledby="tncn-deps-sheet-title">
+      <header class="tncn-mobile-sheet__header">
+        <h2 id="tncn-deps-sheet-title" class="tncn-mobile-sheet__title">Người phụ thuộc là gì?</h2>
+        <button type="button" class="tncn-mobile-sheet__close" data-tncn-mobile-sheet-dismiss aria-label="Đóng">
+          <i class="bi bi-x-lg tncn-mobile-sheet__close-icon" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="tncn-mobile-sheet__body">
+        <p class="tncn-mobile-sheet__lead">
+          Người phụ thuộc (NPT) là người mà đối tượng nộp thuế thu nhập cá nhân có trách nhiệm nuôi dưỡng.
+        </p>
+        <div class="tncn-mobile-sheet__detail">
+          <p class="tncn-mobile-sheet__detail-p">
+            <strong>Con cái:</strong> Con đẻ, con nuôi hợp pháp, con ngoài giá thú, con riêng dưới 18 tuổi hoặc con trên 18 tuổi bị khuyết tật/đang học tập không có thu nhập.
+          </p>
+          <p class="tncn-mobile-sheet__detail-p tncn-mobile-sheet__detail-p--last">
+            <strong>Người thân khác:</strong> Vợ/Chồng, Cha mẹ, Anh chị em ruột... hết tuổi lao động hoặc không có khả năng lao động và không có thu nhập (hoặc thu nhập thấp).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tncn-gross-sheet" class="tncn-mobile-sheet" hidden aria-hidden="true">
+    <div class="tncn-mobile-sheet__backdrop" data-tncn-mobile-sheet-dismiss tabindex="-1"></div>
+    <div class="tncn-mobile-sheet__panel tncn-mobile-sheet__panel--short" role="dialog" aria-modal="true" aria-labelledby="tncn-gross-sheet-title">
+      <header class="tncn-mobile-sheet__header">
+        <h2 id="tncn-gross-sheet-title" class="tncn-mobile-sheet__title">Lương Gross là gì?</h2>
+        <button type="button" class="tncn-mobile-sheet__close" data-tncn-mobile-sheet-dismiss aria-label="Đóng">
+          <i class="bi bi-x-lg tncn-mobile-sheet__close-icon" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="tncn-mobile-sheet__body">
+        <p class="tncn-mobile-sheet__lead">
+          Lương gross là tổng tiền lương của bạn mà công ty chi trả mỗi kỳ trả lương. Bao gồm thuế và các khoản bảo hiểm.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="tncn-net-sheet" class="tncn-mobile-sheet" hidden aria-hidden="true">
+    <div class="tncn-mobile-sheet__backdrop" data-tncn-mobile-sheet-dismiss tabindex="-1"></div>
+    <div class="tncn-mobile-sheet__panel tncn-mobile-sheet__panel--short" role="dialog" aria-modal="true" aria-labelledby="tncn-net-sheet-title">
+      <header class="tncn-mobile-sheet__header">
+        <h2 id="tncn-net-sheet-title" class="tncn-mobile-sheet__title">Lương Net là gì?</h2>
+        <button type="button" class="tncn-mobile-sheet__close" data-tncn-mobile-sheet-dismiss aria-label="Đóng">
+          <i class="bi bi-x-lg tncn-mobile-sheet__close-icon" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="tncn-mobile-sheet__body">
+        <p class="tncn-mobile-sheet__lead">
+          Lương net là tiền lương thực lãnh của bạn mỗi kỳ trả lương, là số tiền bạn có thể bỏ túi
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="tncn-insurance-sheet" class="tncn-mobile-sheet" hidden aria-hidden="true">
+    <div class="tncn-mobile-sheet__backdrop" data-tncn-mobile-sheet-dismiss tabindex="-1"></div>
+    <div class="tncn-mobile-sheet__panel tncn-mobile-sheet__panel--tall" role="dialog" aria-modal="true" aria-labelledby="tncn-insurance-sheet-title">
+      <header class="tncn-mobile-sheet__header">
+        <h2 id="tncn-insurance-sheet-title" class="tncn-mobile-sheet__title">Mức đóng bảo hiểm khác là gì?</h2>
+        <button type="button" class="tncn-mobile-sheet__close" data-tncn-mobile-sheet-dismiss aria-label="Đóng">
+          <i class="bi bi-x-lg tncn-mobile-sheet__close-icon" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="tncn-mobile-sheet__body tncn-mobile-sheet__body--rich">
+        <p class="tncn-mobile-sheet__rich-p">Bạn sẽ điền mức đóng bảo hiểm khi mức lương đóng bảo hiểm khác với mức lương chính thức.</p>
+        <p class="tncn-mobile-sheet__rich-p">Công cụ còn áp dụng trần lương đóng BHXH bắt buộc (20 lần mức tham chiếu theo luật), giống các máy tính thuế phổ biến.</p>
+        <div class="tncn-mobile-sheet__example">
+          <p class="tncn-mobile-sheet__rich-p tncn-mobile-sheet__rich-p--last"><strong>Ví dụ:</strong><br>Lương chính thức của bạn là 10.000.000 VND<br>Mức lương đóng bảo hiểm là 8.000.000 VND</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tncn-region-sheet" class="tncn-mobile-sheet" hidden aria-hidden="true">
+    <div class="tncn-mobile-sheet__backdrop" data-tncn-mobile-sheet-dismiss tabindex="-1"></div>
+    <div class="tncn-mobile-sheet__panel tncn-mobile-sheet__panel--region-wage" role="dialog" aria-modal="true" aria-labelledby="tncn-region-sheet-title">
+      <header class="tncn-mobile-sheet__header">
+        <h2 id="tncn-region-sheet-title" class="tncn-mobile-sheet__title">Giải thích mức lương theo vùng</h2>
+        <button type="button" class="tncn-mobile-sheet__close" data-tncn-mobile-sheet-dismiss aria-label="Đóng">
+          <i class="bi bi-x-lg tncn-mobile-sheet__close-icon" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div id="tncn-region-sheet-body-shell" class="tncn-mobile-sheet__body tncn-mobile-sheet__body--region-wage"></div>
+      <footer class="region-wage-modal__footer tncn-mobile-sheet__region-footer">
+        <button type="button" class="btn region-wage-modal__footer-btn" data-tncn-mobile-sheet-dismiss>Đóng lại</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  <script src="gross-net.js"></script>
+</body>
+</html>
