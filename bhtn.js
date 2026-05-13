@@ -350,6 +350,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    /* Mục lục gn-article: init trong app.js (tránh đăng ký click hai lần với bhtn.js) */
+
     var form = document.getElementById("bhtn-form");
     if (!form) return;
 

@@ -1445,6 +1445,28 @@
     initTncnMobileSheets();
     initRegionWageModal();
 
+    (function initGnArticleToc() {
+      var nav = document.querySelector(".gn-article__toc");
+      var toggle = document.getElementById("gn-article-toc-toggle");
+      if (!nav || !toggle) return;
+
+      function applyExpanded(open) {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        nav.classList.toggle("gn-article__toc--collapsed", !open);
+        toggle.setAttribute(
+          "aria-label",
+          open ? "Thu gọn mục lục" : "Mở rộng mục lục"
+        );
+      }
+
+      toggle.addEventListener("click", function () {
+        var open = toggle.getAttribute("aria-expanded") === "true";
+        applyExpanded(!open);
+      });
+
+      applyExpanded(false);
+    })();
+
     if (document.getElementById("gross-ac")) {
       wireGrossCombobox();
       wireMoneyInputClear(

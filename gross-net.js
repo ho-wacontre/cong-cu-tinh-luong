@@ -125,6 +125,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    /* Mục lục gn-article: init trong app.js (tránh đăng ký click hai lần với gross-net.js) */
+
     var mode = "g2n";
     var gnButtonsPrimed = false;
     var amountLabel = document.getElementById("gn-amount-label");
